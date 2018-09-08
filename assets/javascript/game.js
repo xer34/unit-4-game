@@ -1,4 +1,5 @@
 //variables
+// each crystal should be 1-12
 var randomNumber = Math.floor((Math.random() * 120) + 19);
 // var crystalOne
 var crystalOne = Math.floor((Math.random() * 12) + 1);
@@ -8,28 +9,27 @@ var crystalTwo = Math.floor((Math.random() * 12) + 1);
 var crystalThree = Math.floor((Math.random() * 12) + 1);
 // var crystalFour
 var crystalFour = Math.floor((Math.random() * 12) + 1);
-// each crystal should be 1-12
+// score var
+var score = 0;
+//has the first crystal been clicked?
+var firstCrystal = false;
 
 //score to match between 19-120
-$("#$randomNumber").text(randomNumber);
+$("#$randomNumber").html(randomNumber);
 alert("Match "+ randomNumber + "to win!");
 
 //on click event for each crystal
-$("#one").on("click", function() {
-    alert("This crystal is worth " + crystalOne)
-})
+$("#crystalImage").on("click", function() {
+    if (firstCrystal) {
+        score === this.val();
+    }
+    else {
+        score += this.val();
+    }
+    })
 
-$("#two").on("click", function() {
-    alert("This crystal is worth " + crystalTwo)
-})
+// recognizes the first click, adds it to the blank string
 
-$("#three").on("click", function(){
-    alert("This crystal is worth " + crystalThree)
-})
-
-$("#four").on("click", function(){
-    alert("This crystal is worth " + crystalFour)
-})
 
 // function to make scores additive 
 
