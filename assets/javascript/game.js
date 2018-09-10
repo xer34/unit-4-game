@@ -1,53 +1,60 @@
 //variables
-// each crystal should be 1-12
+
+// random number to win
 var randomNumber = Math.floor((Math.random() * 120) + 19);
-// var crystalOne
-var crystalOne = Math.floor((Math.random() * 12) + 1);
-// var crystalTwo
-var crystalTwo = Math.floor((Math.random() * 12) + 1);
-// var crystalThree
-var crystalThree = Math.floor((Math.random() * 12) + 1);
-// var crystalFour
-var crystalFour = Math.floor((Math.random() * 12) + 1);
-// score var
+// each crystal should be 1-12
+var crystalValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  // score var
 var score = 0;
-//has the first crystal been clicked?
-var firstCrystal = false;
+// wins
+var wins = 0;
+// losses 
+var losses = 0;
+
+// for loop to create four crystals
+for (var i = 0; i < 4; i++) {
+    var imageCrystal = $("<img>");
+    var randomCrystalVal =  crystalValue[Math.floor(Math.random() * crystalValue.length)];
+    imageCrystal.addClass("crystal-image");
+    imageCrystal.attr("src", "assets/images/godDamnItMarieTheyreMinerals.png");
+    imageCrystal.attr("data-crystalvalue", randomCrystalVal);
+    $("#crystals").append(imageCrystal);
+}
 
 //score to match between 19-120
-$("#$randomNumber").html(randomNumber);
-alert("Match "+ randomNumber + "to win!");
+$("#randomNumber").text(randomNumber);
+alert("Match " + randomNumber + " to win!");
 
 //on click event for each crystal
-$("#crystalImage").on("click", function() {
-    if (firstCrystal) {
-        score === this.val();
-    }
-    else {
-        score += this.val();
-    }
-    })
+$(".crystal-image").on("click", function() {
 
-// recognizes the first click, adds it to the blank string
+  randomCrystalVal = ($(this).attr("data-crystalvalue"));
+  randomCrystalVal = parseInt(randomCrystalVal);
 
+  score += randomCrystalVal;
 
-// function to make scores additive 
+  
+  alert("New score: " + score);
 
-//alert with current score
+  //wins
+  if (score === randomNumber) {
+    alert("You win!");
+    wins++;
+    winsText.textContent = wins;
+    score = 0;
+    randomNumber = Math.floor((Math.random() * 120) + 19);
+    $("#randomNumber").text(randomNumber);
+}
 
-// alert on win when score === random number generated at start
+  //losses 
+  else if (score >= randomNumber) {
+    alert("You died!!");
+    losses++
+    lossesText.textContent = losses;
+    score = 0;
+    randomNumber = Math.floor((Math.random() * 120) + 19);
+    $("#randomNumber").text(randomNumber);
+}
 
-// alert loss if score > random number generated
-
-// if win or loss, game resets
-
-// win counter 
-
-// loss counter
-
-// when new game is generated, crystals given new values, and new random number is generated
-
-
-
-
-
+//-----------------------------
+});

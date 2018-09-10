@@ -11,9 +11,10 @@
 
     <title>Crystal Collector</title>
     <style>  
-    #crystalImage {
+    .crystal-image {
         width: 250px;
         height: 250px;
+        padding: 20px;
       }</style>
   </head>
 
@@ -29,22 +30,17 @@
     <div class="container" style="color:white">
       <div class="row">
             <div class=col-2" style="text-align: center" margin="40px">
-            <p>You will be assigned a random number at the start of the game. By clicking a crystal, you will add a specific number to your total score.</p>
-            <p>You win the game by matching your score to the number on your screen! You lose if you go over.</p>
-            <p>The value of each crystal is hidden until you click it.</p>
-            <p>Each time the game starts the value of the crystals will change.</p>
+            <p>The crystals have a hidden amount of resources! Figure out how much you need and match the number!</p>
+            <h2>DO IT OR DIE TRYING</h1>
             <div class=col-4"><br><br><br>
-            <h1 id="$randomNumber"></h1>
+            <h1>Match This Number:        <span id="randomNumber"></span></h1>
+            <h1>Wins:<span id="winsText"></span></h1><h1>Losses:<span id="lossesText"></span></h1>
             </div>
         </div>
       </div>
    
-      <div class="container" style="color:white">
-        <div class="row">
-            <img src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" id="crystalImage" onclick="alert(crystalOne)" class="one" style="padding:40px;">
-            <img src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" id="crystalImage" onclick="alert(crystalTwo)" class="two" style="padding:40px;">
-            <img src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" id="crystalImage" onclick="alert(crystalThree)" class="three" style="padding:40px;">
-            <img src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" id="crystalImage" onclick="alert(crystalFour)" class="four" style="padding:40px;">
+      <div class="container" style="color:white" >
+        <div class="row" id="crystals" style="cursor: pointer"> 
           </div>
         </div>
       </div>
@@ -57,3 +53,4 @@
   </body>
 
 </html>
+
