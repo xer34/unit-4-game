@@ -28,12 +28,14 @@ alert("Match " + randomNumber + " to win!");
 //on click event for each crystal
 $(".crystal-image").on("click", function() {
 
+   //set value to THIS value
   randomCrystalVal = ($(this).attr("data-crystalvalue"));
+  // parse it
   randomCrystalVal = parseInt(randomCrystalVal);
-
+  // udpate score
   score += randomCrystalVal;
 
-  
+  //alert the score
   alert("New score: " + score);
 
   //wins
