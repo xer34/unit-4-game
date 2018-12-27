@@ -1,8 +1,8 @@
 Coding Bootcamp Crystal Collectors by Alexander Lewis
 
-Word Guess Game is a hangman style word guessing game in which the user attempts to guess the word chosen by the computer. The game is video game themed.
+Crystal Collector is a number strategy game in which the user attempts match a goal by collecting points from crystals. The goal is set by the computer and the crystal values are unknown to the user until they are selected during the game.
 
-This game is useful to learn the principals of javascript arrays, functions, statements, and loops. It is also useful to begin learning about the power of objects.
+This game is useful to learn the principals of javascript objects. 
 
 This project is not available for additional contribution from the github community, however Alex may be contacted through his website for help or questions regarding the project.
 
